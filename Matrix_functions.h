@@ -1,4 +1,5 @@
 #pragma once
+
 template<typename T> T& element(T* matrix, size_t col, size_t col_num, size_t row_num) {
 	return matrix[col * row_num + col_num];
 }
@@ -143,6 +144,6 @@ template<typename T>long double* inverse_matrix(const T* matrix, size_t diag) {
 			element(dst, diag, q, i) /= src[i * (diag + 1)];
 		}
 	}
-RET:delete[] src;
+RET:	delete[] src;
 	return dst;
 }
